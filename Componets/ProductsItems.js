@@ -4,8 +4,8 @@ import {View, Text, StyleSheet} from "react-native";
 const ProductsItems = ({product}) => {
     return(
         <View style={styles.container}>
-            <Text style={styles.textTitle}>Product Name</Text>
-            <Text style={styles.textDescription}>Descripcion</Text>
+            <Text style={styles.textTitle}>{product.name}</Text>
+            <Text style={styles.textDescription}>{product.description}</Text>
         </View>
     )
 }

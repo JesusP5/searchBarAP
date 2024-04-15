@@ -9,17 +9,35 @@ const App = () => {
   const [filteredProducts, setFilteredProducts] = useState(products);
 
   const handleSearch = (text) => {
+    setSearch(text);
     const filtered = products.filter((product) => {
-      product.name.toLowerCase().includes(text.toLowerCase());
-      setFilteredProducts(filtered);
-      setSearch(text);
+      return product.name.toLowerCase().includes(text.toLowerCase());
     });
+    setFilteredProducts(filtered);
   }
 
     return(
-        <View>
+        <View style={styles.container}>
           <SearchBar value={search} onChangeText={handleSearch} />
             <ProductsList products={filteredProducts} />
         </View>
     )
 }
+
+const styles = StyleSheet.create({
+    container: {
+        backgroundColor: 'white',
+        margin: 50,
+        padding: 5,
+        borderRadius: 10,
+    },
+    textTitle: {
+        fontSize: 24,
+        fontWeight: 'bold',
+    },
+    textDescription: {
+        fontSize: 16,
+    },
+});
+
+export default App;

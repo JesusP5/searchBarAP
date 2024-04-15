@@ -2,12 +2,14 @@ import {TextInput, StyleSheet} from 'react-native';
 import React from 'react';
 
 const SearchBar = ({value, onChangeText}) => {
-    <TextInput
-        placeholder="Search Products..."
-        multiline={false}
-        onChange={onChangeText}
-        value={value}
-    />;
+    return(
+        <TextInput
+            placeholder="Search Products..."
+            multiline={false}
+            onChange={onChangeText}
+            value={value}
+        />
+    )
 }
 
 const styles = StyleSheet.create({
